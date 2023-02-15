@@ -10,6 +10,10 @@
 
 ``chmod 777 nexus-data``
 
+or
+
+``sudo /bin/bash ./mkdir.sh``
+
 ### Step 3: Build
 
 ``make build``
