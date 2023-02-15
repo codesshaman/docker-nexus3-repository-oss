@@ -4,7 +4,13 @@
 
 ``git clone https://github.com/codesshaman/docker-nexus3-repository-oss.git``
 
-### Step 2: Build
+### Step 2: Create nexus-data
+
+``mkdir nexus-data``
+
+``chmod 777 nexus-data``
+
+### Step 3: Build
 
 ``make build``
 
