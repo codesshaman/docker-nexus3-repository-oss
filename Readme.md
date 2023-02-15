@@ -14,6 +14,8 @@ or
 
 ``sudo /bin/bash ./mkdir.sh``
 
+(Second way most security)
+
 ### Step 3: Build
 
 ``make build``
