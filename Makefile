@@ -27,6 +27,7 @@ help:
 	@echo -e "$(WARN_COLOR)- make re			: Rebuild configuration"
 	@echo -e "$(WARN_COLOR)- make ps			: View configuration"
 	@echo -e "$(WARN_COLOR)- make pass			: View admin password"
+	@echo -e "$(WARN_COLOR)- make rm			: Remove nexus-data folder"
 	@echo -e "$(WARN_COLOR)- make clean			: Cleaning configuration$(NO_COLOR)"
 
 build:
@@ -54,6 +55,10 @@ pass:
 	@cat nexus-data/admin.password
 	@echo " "
 
+rm:
+	@printf "$(BLUE)==== View configuration ${name}... ====$(NO_COLOR)\n"
+	@sudo rm -rf nexus-data
+
 clean: down
 	@printf "$(ERROR_COLOR)==== Cleaning configuration ${name}... ====$(NO_COLOR)\n"
 	@sudo rm -rf nexus-data
@@ -67,4 +72,4 @@ fclean:
 	# @docker network prune --force
 	# @docker volume prune --force
 
-.PHONY	: all help build connect down re ps pass clean fclean
+.PHONY	: all help build connect down re ps pass rm clean fclean
