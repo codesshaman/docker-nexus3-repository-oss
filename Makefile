@@ -31,7 +31,7 @@ help:
 
 build:
 	@printf "$(OK_COLOR)==== Building configuration ${name}... ====$(NO_COLOR)\n"
-	@docker-compose -f ./docker-compose.yml up -d --build
+	@bash run.sh
 
 connect:
 	@printf "$(CYAN)==== Connection to docker ${name}... ====$(NO_COLOR)\n"
@@ -56,6 +56,7 @@ pass:
 
 clean: down
 	@printf "$(ERROR_COLOR)==== Cleaning configuration ${name}... ====$(NO_COLOR)\n"
+	@sudo rm -rf nexus-data
 	@docker system prune -a
 
 fclean:

@@ -4,25 +4,9 @@
 
 ``git clone https://github.com/codesshaman/docker-nexus3-repository-oss.git``
 
-### Step 2: Create nexus-data
-
-``mkdir nexus-data``
-
-``chmod 777 nexus-data``
-
-or
-
-``sudo /bin/bash ./mkdir.sh``
-
-(Second way most security)
-
-### Step 3: Build
+### Step 2: Build
 
 ``make build``
-
-or
-
-``docker-compose up -d --build``
 
 ### Step 3: Connection
 
