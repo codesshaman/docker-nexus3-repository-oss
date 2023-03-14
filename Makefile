@@ -22,9 +22,11 @@ help:
 	@echo -e "$(OK_COLOR)==== All commands of ${name} configuration ====$(NO_COLOR)"
 	@echo -e "$(WARN_COLOR)- make				: Launch configuration"
 	@echo -e "$(WARN_COLOR)- make build			: Building configuration"
+	@echo -e "$(WARN_COLOR)- make connect			: Connection to docker "
 	@echo -e "$(WARN_COLOR)- make down			: Stopping configuration"
 	@echo -e "$(WARN_COLOR)- make re			: Rebuild configuration"
 	@echo -e "$(WARN_COLOR)- make ps			: View configuration"
+	@echo -e "$(WARN_COLOR)- make pass			: View admin password"
 	@echo -e "$(WARN_COLOR)- make clean			: Cleaning configuration$(NO_COLOR)"
 
 build:
@@ -47,6 +49,11 @@ ps:
 	@printf "$(BLUE)==== View configuration ${name}... ====$(NO_COLOR)\n"
 	@docker-compose -f ./docker-compose.yml ps
 
+pass:
+	@printf "$(UCYAN)==== View password ${name}... ====$(NO_COLOR)\n"
+	@cat nexus-data/admin.password
+	@echo " "
+
 clean: down
 	@printf "$(ERROR_COLOR)==== Cleaning configuration ${name}... ====$(NO_COLOR)\n"
 	@docker system prune -a
@@ -59,4 +66,4 @@ fclean:
 	# @docker network prune --force
 	# @docker volume prune --force
 
-.PHONY	: all help build connect down re ps clean fclean
+.PHONY	: all help build connect down re ps pass clean fclean
