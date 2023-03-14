@@ -2,9 +2,18 @@ version: "3"
 
 services:
   nexus3:
-    image: sonatype/nexus3:3.47.1
+    image: sonatype/nexus3:3.48.0
+    expose:
+      - 8080
+      - 8081
+      - 8082
+      - 8083
     ports:
+      - 8080:8080
       - 8081:8081
+      - 8082:8082
+      - 8083:8083
+    restart: unless-stopped
     volumes:
       - ./nexus-data:/nexus-data:z
     container_name: nexus3

@@ -26,7 +26,9 @@ or
 
 ### Step 3: Connection
 
-Use ``YOUR_IP:8081`` or your port if you change port in docker-compose.
+Use ``YOUR_IP:8081`` in docker-compose if you need change any ports for panel or for reposytoryes.
+
+You can expose more ports in docker-compose file if necessary.
 
 Sign in pannel with login and password ``admin`` and password from ``nexus-data/admin.password`` file:
 

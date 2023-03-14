@@ -31,6 +31,10 @@ build:
 	@printf "$(OK_COLOR)==== Building configuration ${name}... ====$(NO_COLOR)\n"
 	@docker-compose -f ./docker-compose.yml up -d --build
 
+connect:
+	@printf "$(CYAN)==== Connection to docker ${name}... ====$(NO_COLOR)\n"
+	@docker-compose exec nexus3 sh
+
 down:
 	@printf "$(ERROR_COLOR)==== Stopping configuration ${name}... ====$(NO_COLOR)\n"
 	@docker-compose -f ./docker-compose.yml down
@@ -55,4 +59,4 @@ fclean:
 	# @docker network prune --force
 	# @docker volume prune --force
 
-.PHONY	: all help build down re ps clean fclean
+.PHONY	: all help build connect down re ps clean fclean
