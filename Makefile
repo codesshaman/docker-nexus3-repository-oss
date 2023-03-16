@@ -22,13 +22,16 @@ help:
 	@echo -e "$(OK_COLOR)==== All commands of ${name} configuration ====$(NO_COLOR)"
 	@echo -e "$(WARN_COLOR)- make				: Launch configuration"
 	@echo -e "$(WARN_COLOR)- make build			: Building configuration"
-	@echo -e "$(WARN_COLOR)- make connect			: Connection to docker "
+	@echo -e "$(WARN_COLOR)- make conn			: Connection to docker registry"
+	@echo -e "$(WARN_COLOR)- make connect			: Connection to docker image"
 	@echo -e "$(WARN_COLOR)- make down			: Stopping configuration"
 	@echo -e "$(WARN_COLOR)- make re			: Rebuild configuration"
 	@echo -e "$(WARN_COLOR)- make ps			: View configuration"
 	@echo -e "$(WARN_COLOR)- make pass			: View admin password"
-	@echo -e "$(WARN_COLOR)- make rm			: Remove nexus-data folder"
-	@echo -e "$(WARN_COLOR)- make clean			: Cleaning configuration$(NO_COLOR)"
+	@echo -e "$(WARN_COLOR)- make pull			: View command for pulling"
+	@echo -e "$(WARN_COLOR)- make push			: View command for pushing"
+	@echo -e "$(WARN_COLOR)- make rm			: Remove image and folder"
+	@echo -e "$(WARN_COLOR)- make clean			: Cleaning docker configuration$(NO_COLOR)"
 
 build:
 	@printf "$(OK_COLOR)==== Building configuration ${name}... ====$(NO_COLOR)\n"
@@ -56,8 +59,15 @@ ps:
 
 pass:
 	@printf "$(UCYAN)==== View password ${name}... ====$(NO_COLOR)\n"
+	@bash pull.sh
+
+pull:
+	@printf "$(PURPLE)==== Command for pulling ${name}... ====$(NO_COLOR)\n"
+	@bash push.sh
+
+push:
+	@printf "$(PURPLE)==== Command for pushing ${name}... ====$(NO_COLOR)\n"
 	@bash pass.sh
-	@echo " "
 
 rm:
 	@printf "$(BLUE)==== View configuration ${name}... ====$(NO_COLOR)\n"
@@ -76,4 +86,4 @@ fclean:
 	# @docker network prune --force
 	# @docker volume prune --force
 
-.PHONY	: all help build conn connect down re ps pass rm clean fclean
+.PHONY	: all help build conn connect down re ps pass pull push rm clean fclean
