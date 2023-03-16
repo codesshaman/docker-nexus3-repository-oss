@@ -34,6 +34,10 @@ build:
 	@printf "$(OK_COLOR)==== Building configuration ${name}... ====$(NO_COLOR)\n"
 	@bash run.sh
 
+conn:
+	@printf "$(CYAN)==== Connection to docker ${name}... ====$(NO_COLOR)\n"
+	@bash conn.sh
+
 connect:
 	@printf "$(CYAN)==== Connection to docker ${name}... ====$(NO_COLOR)\n"
 	@docker-compose exec nexus3 sh
@@ -52,7 +56,7 @@ ps:
 
 pass:
 	@printf "$(UCYAN)==== View password ${name}... ====$(NO_COLOR)\n"
-	@cat nexus-data/admin.password
+	@bash pass.sh
 	@echo " "
 
 rm:
@@ -72,4 +76,4 @@ fclean:
 	# @docker network prune --force
 	# @docker volume prune --force
 
-.PHONY	: all help build connect down re ps pass rm clean fclean
+.PHONY	: all help build conn connect down re ps pass rm clean fclean
