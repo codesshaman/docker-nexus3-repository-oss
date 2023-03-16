@@ -50,7 +50,7 @@ Create new repository in "repositories -> create repository -> docker (hosted).
 
 Use any name (for example just ``docker``) and write this name in ``REPOSITORY_NAME`` variable in ``.env``.
 
-Use your ``REGISTRY_PORT`` (4 numbers) like http port.
+Use your ``REGISTRY_PORT`` like http port.
 
 Enable V1 api.
 
