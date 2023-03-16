@@ -79,3 +79,5 @@ Up:
 or
 
 ``docker-compose up -d``
+
+Use ``make help`` to view all available commands.
