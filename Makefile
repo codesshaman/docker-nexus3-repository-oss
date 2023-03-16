@@ -63,7 +63,7 @@ pass:
 
 pull:
 	@printf "$(PURPLE)==== Command for pulling ${name}... ====$(NO_COLOR)\n"
-	@bash p=pull.sh
+	@bash pull.sh
 
 push:
 	@printf "$(PURPLE)==== Command for pushing ${name}... ====$(NO_COLOR)\n"
