@@ -62,6 +62,14 @@ Go to ``Security -> Realms`` and add realm named ``Docker Bearer Token Realm``
 
 Use `` make conn`` to connection to the registry.
 
+### Nexus docker registry using:
+
+Use ``make tag`` to help with create image tag.
+
+Use ``make pull`` to help with pulling.
+
+Use ``make push`` to help with pushing.
+
 ### Manage commands:
 
 Down:
