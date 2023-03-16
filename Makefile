@@ -31,6 +31,7 @@ help:
 	@echo -e "$(WARN_COLOR)- make pull			: View command for pulling"
 	@echo -e "$(WARN_COLOR)- make push			: View command for pushing"
 	@echo -e "$(WARN_COLOR)- make rm			: Remove image and folder"
+	@echo -e "$(WARN_COLOR)- make tag			: View command for create tag"
 	@echo -e "$(WARN_COLOR)- make clean			: Cleaning docker configuration$(NO_COLOR)"
 
 build:
@@ -73,6 +74,10 @@ rm:
 	@printf "$(BLUE)==== View configuration ${name}... ====$(NO_COLOR)\n"
 	@sudo rm -rf nexus-data
 
+tag:
+	@printf "$(PURPLE)==== Command for create tag ${name}... ====$(NO_COLOR)\n"
+	@bash tag.sh
+
 clean: down
 	@printf "$(ERROR_COLOR)==== Cleaning configuration ${name}... ====$(NO_COLOR)\n"
 	@sudo rm -rf nexus-data
@@ -86,4 +91,4 @@ fclean:
 	# @docker network prune --force
 	# @docker volume prune --force
 
-.PHONY	: all help build conn connect down re ps pass pull push rm clean fclean
+.PHONY	: all help build conn connect down re ps pass pull push rm tag clean fclean
