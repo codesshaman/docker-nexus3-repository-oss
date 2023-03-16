@@ -59,15 +59,15 @@ ps:
 
 pass:
 	@printf "$(UCYAN)==== View password ${name}... ====$(NO_COLOR)\n"
-	@bash pull.sh
+	@bash pass.sh
 
 pull:
 	@printf "$(PURPLE)==== Command for pulling ${name}... ====$(NO_COLOR)\n"
-	@bash push.sh
+	@bash p=pull.sh
 
 push:
 	@printf "$(PURPLE)==== Command for pushing ${name}... ====$(NO_COLOR)\n"
-	@bash pass.sh
+	@bash push.sh
 
 rm:
 	@printf "$(BLUE)==== View configuration ${name}... ====$(NO_COLOR)\n"
