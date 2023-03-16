@@ -18,6 +18,8 @@ You can expose more ports in docker-compose file if necessary.
 
 Follow to the principle: one port - one repository.
 
+Open all necessary ports in firewall!
+
 ### Step 3: Build
 
 Use ``make`` utility for build system:
@@ -58,7 +60,7 @@ Go to ``Security -> Realms`` and add realm named ``Docker Bearer Token Realm``
 
 ### Step 8: Connect to the registry
 
-
+Use `` make conn`` to connection to the registry.
 
 ### Manage commands:
 
