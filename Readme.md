@@ -60,7 +60,7 @@ Go to ``Security -> Realms`` and add realm named ``Docker Bearer Token Realm``
 
 ### Step 8: Connect to the registry
 
-Use `` make conn`` to connection to the registry.
+Use ``make conn`` to connection to the registry.
 
 ### Nexus docker registry using:
 
