@@ -36,11 +36,11 @@ help:
 
 build:
 	@printf "$(OK_COLOR)==== Building configuration ${name}... ====$(NO_COLOR)\n"
-	@bash run.sh
+	@bash scripts/run.sh
 
 conn:
 	@printf "$(CYAN)==== Connection to docker ${name}... ====$(NO_COLOR)\n"
-	@bash conn.sh
+	@bash scripts/conn.sh
 
 connect:
 	@printf "$(CYAN)==== Connection to docker ${name}... ====$(NO_COLOR)\n"
@@ -60,15 +60,15 @@ ps:
 
 pass:
 	@printf "$(UCYAN)==== View password ${name}... ====$(NO_COLOR)\n"
-	@bash pass.sh
+	@bash scripts/pass.sh
 
 pull:
 	@printf "$(PURPLE)==== Command for pulling ${name}... ====$(NO_COLOR)\n"
-	@bash pull.sh
+	@bash scripts/pull.sh
 
 push:
 	@printf "$(PURPLE)==== Command for pushing ${name}... ====$(NO_COLOR)\n"
-	@bash push.sh
+	@bash scripts/push.sh
 
 rm:
 	@printf "$(BLUE)==== View configuration ${name}... ====$(NO_COLOR)\n"
@@ -76,7 +76,7 @@ rm:
 
 tag:
 	@printf "$(PURPLE)==== Command for create tag ${name}... ====$(NO_COLOR)\n"
-	@bash tag.sh
+	@bash scripts/tag.sh
 
 clean: down
 	@printf "$(ERROR_COLOR)==== Cleaning configuration ${name}... ====$(NO_COLOR)\n"
