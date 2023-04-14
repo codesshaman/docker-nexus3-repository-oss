@@ -12,7 +12,9 @@ If your run configuration not in local host, change ``HOST_ADDRESS`` to use your
 
 Use variable ``REPOSITORY_NAME`` for quick connect to you repository (change value if necessary).
 
-If your use different ports, change ports in the same file.
+If you use subnet to connection, change ``NEXUX_NETWORK`` variable to tour network name.
+
+If your use ports, change ports in the same file.
 
 You can expose more ports in docker-compose file if necessary.
 

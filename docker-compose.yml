@@ -17,3 +17,10 @@ services:
     volumes:
       - ./nexus-data:/nexus-data:z
     container_name: nexus3
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: $NEXUX_NETWORK
